@@ -1,13 +1,13 @@
 {
   "name": "webpack-tutorial",
   "version": "1.0.0",
-  "description": "shablon",
+  "description": "",
   "main": "index.js",
   "homepage": "https://github.com/miracle-alt/shablon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve",
-    "build": "webpack"
+    "build": "webpack build serve /shablon"
   },
   "repository": {
     "type": "git",

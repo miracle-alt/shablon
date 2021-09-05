@@ -1,3 +1,9 @@
+import {printInfo} from './test.js';
+import arr from "./test.js";
+
+console.log(printInfo(10));
+console.log(arr);
+//-----------------------------------------------------------------------------------------------------------------------------------------------
 // import simpleTemplate from "./templates/simple.hbs";
 // import listTemplate from "./templates/list.hbs";
 // import arrTemplate from "./templates/array.hbs";
