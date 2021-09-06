@@ -1,8 +1,13 @@
+import { sum } from "./helper/sum.js";
+console.log(sum(2,3));
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 import {printInfo} from './test.js';
 import arr from "./test.js";
 
 console.log(printInfo(10));
 console.log(arr);
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+console.log("Webpack");
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 // import simpleTemplate from "./templates/simple.hbs";
 // import listTemplate from "./templates/list.hbs";
@@ -14,6 +19,9 @@ import { submitHandler } from "./js/handlers.js";
 import questionsTemplate from "./templates/questions.hbs";
 import serverData from "./data/serverData.js";
 import "./styles/style.css";
+//------------------------------------------------------
+import "./styles/main.scss";
+//----------------------------------------------------
 import { createLi } from "./js/templateStringHandler.js";
 
 // const root = document.querySelector("#root");
@@ -70,3 +78,37 @@ const result = dataFromStorage.map((string) => createLi(string));
 const markup = result.join("");
 refs.ul.insertAdjacentHTML("beforeend", markup);
 refs.form.addEventListener("submit", submitHandler);
+
+//--------------------------------------------------------------------------------------------------------
+// Create a class property without a constructor
+class Game {
+    name = "Violin Charades";
+}
+const myGame = new Game();
+
+const p = document.createElement("p");
+p.textContent = `I like ${myGame.name}.`;
+
+const heading = document.createElement("h1");
+heading.textContent = "Interesting!";
+
+const app = document.querySelector("#root");
+app.append(heading, p);
+//----------------------------------------------------------------------------------------------------------------------------------------------
+import expamle from "./images/smoke.png";
+const img = document.createElement('img');
+img.src = expamle;
+app.append(img);
+//---------------------------------------------------------------------------------------------------------------------------------------------
+import imgSvg from "./images/flat.svg";
+const svgImg = document.createElement('img');
+svgImg.src = imgSvg;
+app.append(svgImg);
+
+
+
+
+
+
+
+

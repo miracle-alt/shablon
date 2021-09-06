@@ -5,34 +5,34 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    main: path.resolve(__dirname, "./src/index.js"),                 // точка входа
   },
 
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "./dist"),                          // точка выхода
     filename: "[name].bundle.js",
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
+    new CleanWebpackPlugin(),                                        // плагин для очитки папки dist
+    new HtmlWebpackPlugin({                                          // настройка html с опциями
       title: "My App",
       template: path.resolve(__dirname, "./src/template.html"),
       filename: "index.html",
       inject: "body",
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),                        // 
   ],
 
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$/,                                               // для работы с файлами 
         exclude: "/node_modules/",
         use: ["babel-loader"],
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i,                  // для работы с картинками
         type: "asset/resource",
       },
       {
