@@ -9,11 +9,11 @@ console.log(arr);
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 console.log("Webpack");
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-// import simpleTemplate from "./templates/simple.hbs";
+import simpleTemplate from "./templates/simple.hbs";
 // import listTemplate from "./templates/list.hbs";
 // import arrTemplate from "./templates/array.hbs";
 // import libsTemplate from "./templates/libs.hbs";
-// import { base, list, frameworks, libs } from "./data/hbsData.js";
+import { base, list, frameworks, libs } from "./data/hbsData.js";
 import refs from "./js/refs.js";
 import { submitHandler } from "./js/handlers.js";
 import questionsTemplate from "./templates/questions.hbs";
@@ -24,12 +24,13 @@ import "./styles/main.scss";
 //----------------------------------------------------
 import { createLi } from "./js/templateStringHandler.js";
 
-// const root = document.querySelector("#root");
+const root = document.querySelector("#root");
 
-// // 1) Simple example
-// const markup = simpleTemplate(base);
+// 1) Simple example
+const markup = simpleTemplate(base);
+console.log(markup);
 
-// root.insertAdjacentHTML("beforeend", markup);
+root.insertAdjacentHTML("beforeend", markup);
 
 // const listMarkup = listTemplate(list);
 
@@ -70,7 +71,7 @@ import { createLi } from "./js/templateStringHandler.js";
 
 // console.log(localStorage.getItem("settings"));
 
-/////////////////// template string
+// template string
 const storageCollection = JSON.parse(localStorage.getItem("list"));
 // "[1,2,3,4]" // [1,2,3,4] // null
 const dataFromStorage = storageCollection ? storageCollection : [];
