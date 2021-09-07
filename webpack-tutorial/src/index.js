@@ -9,11 +9,12 @@ console.log(arr);
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 console.log("Webpack");
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-import simpleTemplate from "./templates/simple.hbs";
-// import listTemplate from "./templates/list.hbs";
-// import arrTemplate from "./templates/array.hbs";
-// import libsTemplate from "./templates/libs.hbs";
-import { base, list, frameworks, libs } from "./data/hbsData.js";
+import simpleTemplate from "./templates/simple.hbs";            // мои данные
+import listTemplate from "./templates/list.hbs";                 // список библиотек 
+import arrTemplate from "./templates/array.hbs";             // если квадратные скобки ставится - this
+import libsTemplate from "./templates/libs.hbs";               //
+import { base, list, frameworks, libs } from "./data/hbsData.js";    // 
+//---------------------------------------------------------------------------------------------------------------------
 import refs from "./js/refs.js";
 import { submitHandler } from "./js/handlers.js";
 import questionsTemplate from "./templates/questions.hbs";
@@ -27,23 +28,19 @@ import { createLi } from "./js/templateStringHandler.js";
 const root = document.querySelector("#root");
 
 // 1) Simple example
-const markup = simpleTemplate(base);
-console.log(markup);
+const markup1 = simpleTemplate(base);
+console.log(markup1);
+root.insertAdjacentHTML("beforeend", markup1);
 
-root.insertAdjacentHTML("beforeend", markup);
+const listMarkup = listTemplate(list);
+root.insertAdjacentHTML("beforeend", listMarkup);
 
-// const listMarkup = listTemplate(list);
+const arrMarkup = arrTemplate(frameworks);
+root.insertAdjacentHTML("beforeend", arrMarkup);
 
-// root.insertAdjacentHTML("beforeend", listMarkup);
-
-// const arrMarkup = arrTemplate(frameworks);
-
-// root.insertAdjacentHTML("beforeend", arrMarkup);
-
-// const libsMarkup = libsTemplate(libs);
-
-// root.insertAdjacentHTML("beforeend", libsMarkup);
-
+const libsMarkup = libsTemplate(libs);
+root.insertAdjacentHTML("beforeend", libsMarkup);
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
 // 1) Поучить доступ к данным формы - event submit
 // 2) На основе данных из формы нарисовать элемнт списка - hbs
 
