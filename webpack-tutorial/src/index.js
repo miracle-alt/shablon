@@ -17,8 +17,10 @@ import { base, list, frameworks, libs } from "./data/hbsData.js";    //
 //---------------------------------------------------------------------------------------------------------------------
 import refs from "./js/refs.js";
 import { submitHandler } from "./js/handlers.js";
+
 import questionsTemplate from "./templates/questions.hbs";
 import serverData from "./data/serverData.js";
+
 import "./styles/style.css";
 //------------------------------------------------------
 import "./styles/main.scss";
@@ -43,10 +45,11 @@ root.insertAdjacentHTML("beforeend", libsMarkup);
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 // 1) Поучить доступ к данным формы - event submit
 // 2) На основе данных из формы нарисовать элемнт списка - hbs
+console.log(refs);
 
-// const markup = questionsTemplate(serverData);
-
-// refs.root.insertAdjacentHTML("beforeend", markup);
+const markup2 = questionsTemplate(serverData);
+refs.root.insertAdjacentHTML("beforeend", markup2);
+console.log(markup2);
 
 // localStorage.setItem("theme", "dark");
 // const theme = localStorage.getItem("theme");
