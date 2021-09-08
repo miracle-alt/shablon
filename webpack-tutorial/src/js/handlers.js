@@ -17,6 +17,7 @@ export function submitHandler(e) {
   e.preventDefault();
   const value = refs.input.value;
   refs.ul.insertAdjacentHTML("beforeend", createLi(value));
+  
   const array = JSON.parse(localStorage.getItem("list"));
   const arrayForStorage = array ? array : [];
   arrayForStorage.push(value);

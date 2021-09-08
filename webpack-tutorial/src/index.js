@@ -50,35 +50,45 @@ console.log(refs);
 const markup2 = questionsTemplate(serverData);
 refs.root.insertAdjacentHTML("beforeend", markup2);
 console.log(markup2);
-
-// localStorage.setItem("theme", "dark");
-// const theme = localStorage.getItem("theme");
+//-----------------------------------------------------------
+// localStorage.setItem("theme", "dark");                // строка
+// const theme = localStorage.getItem("theme");          // настройка фона браузера
 // console.log(theme);
-
-// const settings = {
-//   theme: "pink",
-//   fontSize: 12,
-//   fontFamily: "Roboto",
-// };
-
+//-----------------------------------------------------------
+const settings = {                                    // обьект 
+  theme: "pink",                                      // настройки сайта
+  fontSize: 12,
+  fontFamily: "Roboto",
+};
 // const dataForStorage = JSON.stringify(settings);
-
 // localStorage.setItem("settings", dataForStorage);
-
-// const data = localStorage.getItem("settings");
-
+//-----------------------------------------------------------
+// const data = localStorage.getItem("settings");           // 
 // console.log(`data`, JSON.parse(data));
+//-----------------------------------------------------------
 
-// console.log(localStorage.getItem("settings"));
 
-// template string
-const storageCollection = JSON.parse(localStorage.getItem("list"));
+
+
+
+
+console.log(localStorage.getItem("settings"));
+
+
+
+
+
+
+
+//   template string (для того чтоб данные не удалялись при перезагрузки сайта)
+const storageCollection = JSON.parse(localStorage.getItem("list"));          // проверить работу Storage
 // "[1,2,3,4]" // [1,2,3,4] // null
-const dataFromStorage = storageCollection ? storageCollection : [];
-const result = dataFromStorage.map((string) => createLi(string));
-const markup = result.join("");
-refs.ul.insertAdjacentHTML("beforeend", markup);
-refs.form.addEventListener("submit", submitHandler);
+const dataFromStorage = storageCollection ? storageCollection : [];          // 
+
+const result = dataFromStorage.map((string) => createLi(string));            // создаем первые данные(разметку)
+const markup = result.join("");                                              // из этих данных(разметки) делаем одну строку
+refs.ul.insertAdjacentHTML("beforeend", markup);                             // делаем вставку ul
+refs.form.addEventListener("submit", submitHandler);                         // вствка формы при сабмите li
 
 //--------------------------------------------------------------------------------------------------------
 // Create a class property without a constructor
