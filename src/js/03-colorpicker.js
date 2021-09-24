@@ -1,7 +1,10 @@
+import colorCardTpl from '../templates/color-card.hbs';
+import colorCardsTpl from '../templates/color-cards.hbs';
 import colors from './colors.json';
 import '../css/colorpicker.css';
 import '../css/style.css';
 
+console.log(colorCardsTpl(colors));
 
 const paletteContainer = document.querySelector('.js-palette');
 const cardsMarkup = createColorCardsMarkup(colors);
@@ -11,24 +14,8 @@ paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
 paletteContainer.addEventListener('click', onPaletteContainerClick);
 //---------------------------------------------------------------------
 function createColorCardsMarkup (colors) {
-    return colors
-    .map(({hex, rgb}) => {
-        return `
-        <div class="color-card">
-                <div 
-                    class="color-swatch" 
-                    data-hex="${hex}" 
-                    data-rgb="${rgb}" 
-                    style="background-color: ${hex};"
-                ></div>
-                <div class="color-meta">
-                    <p>HEX: ${hex}</p>
-                    <p>RGB: ${rgb}</p>
-                </div>
-            </div>
-        `;
-    }).join('');
-    // console.log(markup);
+    return colors.map(colorCardTpl).join('');   // вызов одной карточки    или
+    // return colorCardsTpl(colors);              // вызов всех карточек сразу
 }
 //---------------------------------------------------------------------
 function onPaletteContainerClick (evt) {
