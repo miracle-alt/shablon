@@ -19,9 +19,11 @@
   "homepage": "https://github.com/miracle-alt/shablon#readme",
   "dependencies": {
     "joi": "^17.4.2",
+    "lodash.throttle": "^4.1.1",
     "shortid": "^2.2.16"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
   }
 }

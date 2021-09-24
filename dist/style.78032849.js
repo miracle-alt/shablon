@@ -117,51 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/colors.json":[function(require,module,exports) {
-module.exports = [{
-  "hex": "#f44336",
-  "rgb": "244,67,54"
-}, {
-  "hex": "#e91e63",
-  "rgb": "233,30,99"
-}, {
-  "hex": "#9c27b0",
-  "rgb": "156,39,176"
-}, {
-  "hex": "#673ab7",
-  "rgb": "103,58,183"
-}, {
-  "hex": "#3f51b5",
-  "rgb": "63,81,181"
-}, {
-  "hex": "#2196f3",
-  "rgb": "33,150,54"
-}, {
-  "hex": "#f44336",
-  "rgb": "244,67,243"
-}, {
-  "hex": "#00bcd4",
-  "rgb": "0,188,212"
-}, {
-  "hex": "#009688",
-  "rgb": "0,150,136"
-}, {
-  "hex": "#4caf50",
-  "rgb": "76,175,80"
-}, {
-  "hex": "#ffeb3d",
-  "rgb": "255,235,59"
-}, {
-  "hex": "#ff9800",
-  "rgb": "255,152,0"
-}, {
-  "hex": "#795548",
-  "rgb": "121,85,72"
-}, {
-  "hex": "#607d8b",
-  "rgb": "96,125,139"
-}];
-},{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -228,78 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/colorpicker.css":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/style.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"css/style.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/03-colorpicker.js":[function(require,module,exports) {
-"use strict";
-
-var _colors = _interopRequireDefault(require("./colors.json"));
-
-require("../css/colorpicker.css");
-
-require("../css/style.css");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var paletteContainer = document.querySelector('.js-palette');
-var cardsMarkup = createColorCardsMarkup(_colors.default);
-paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
-paletteContainer.addEventListener('click', onPaletteContainerClick); //---------------------------------------------------------------------
-
-function createColorCardsMarkup(colors) {
-  return colors.map(function (_ref) {
-    var hex = _ref.hex,
-        rgb = _ref.rgb;
-    return "\n        <div class=\"color-card\">\n                <div \n                    class=\"color-swatch\" \n                    data-hex=\"".concat(hex, "\" \n                    data-rgb=\"").concat(rgb, "\" \n                    style=\"background-color: ").concat(hex, ";\"\n                ></div>\n                <div class=\"color-meta\">\n                    <p>HEX: ").concat(hex, "</p>\n                    <p>RGB: ").concat(rgb, "</p>\n                </div>\n            </div>\n        ");
-  }).join(''); // console.log(markup);
-} //---------------------------------------------------------------------
-
-
-function onPaletteContainerClick(evt) {
-  var isColorSwatchEl = evt.target.classList.contains('color-swatch');
-
-  if (!isColorSwatchEl) {
-    // чтоб клик был только на цвете
-    return;
-  }
-
-  var swatchEl = evt.target;
-  var parentColorCard = swatchEl.closest('.color-card');
-  removeActiveCardClass();
-  addActiveCardClass(parentColorCard);
-  setBodyBgColor(swatchEl.dataset.hex);
-} //---------------------------------------------------------------------
-
-
-function setBodyBgColor(color) {
-  // задается цвет боди
-  document.body.style.backgroundColor = color;
-} //---------------------------------------------------------------------
-
-
-function removeActiveCardClass() {
-  // снимается активная при нажатии на другом цвете
-  var currentActiveCard = document.querySelector('.color-card.is-active');
-
-  if (currentActiveCard) {
-    currentActiveCard.classList.remove('is-active');
-  }
-} //---------------------------------------------------------------------
-
-
-function addActiveCardClass(card) {
-  // добавить актив на цвет
-  card.classList.add('is-active');
-} //---------------------------------------------------------------------
-},{"./colors.json":"js/colors.json","../css/colorpicker.css":"css/colorpicker.css","../css/style.css":"css/style.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -503,5 +393,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/03-colorpicker.js"], null)
-//# sourceMappingURL=/03-colorpicker.297a7362.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/style.78032849.js.map

@@ -1,0 +1,25 @@
+body {
+    background-color: aqua;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #2a2a2a;
+}
+button,
+label {
+    cursor: pointer;
+}
+
+input {
+    font: inherit;
+}
+
+.section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+
+
+/*# sourceMappingURL=/style.78032849.css.map */
