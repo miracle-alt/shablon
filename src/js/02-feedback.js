@@ -1,6 +1,6 @@
 import throttle from 'lodash.throttle';
 // import '../css/common.css';
-// import '../css/feedback-form.css';
+import '../css/feedback-form.css';
 
 const formData = {};
 
